@@ -19,7 +19,7 @@ public class OrderController {
     private OrderService service;
     
     @PostMapping("/bookOrder")
-    public TransactionResponse bookOrder(@RequestBody TransactionRequest request) {
+    public TransactionResponse bookOrder(@RequestBody TransactionRequest request) throws Exception{
         return service.saveOrder(request);
     }
 }
