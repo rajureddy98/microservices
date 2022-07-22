@@ -15,12 +15,12 @@ public class PaymentController {
     private PaymentService service;
 
     @PostMapping("/doPayment")
-    public Payment doPayment(@RequestBody Payment payment) {
+    public Payment doPayment(@RequestBody Payment payment) throws Exception {
         return service.doPayment(payment);
     }
 
     @GetMapping("/{orderId}")
-    public Payment findPaymentHistoryByOrderId(@PathVariable int orderId){
+    public Payment findPaymentHistoryByOrderId(@PathVariable int orderId) throws Exception{
               return service.findPaymentHistoryByOrderId(orderId);
     }
 
