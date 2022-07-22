@@ -10,3 +10,7 @@ spring:
     name: payment-service
 logging:
   file: C:/Users/Basant.Hota/Desktop/oms.log
+eureka:
+  client:
+    service-url:
+      defaultZone: http://43.205.143.93:8761/eureka/
