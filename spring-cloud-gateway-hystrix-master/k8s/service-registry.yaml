@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-registry
+  labels:
+    app: service-registry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-registry
+  template:
+    metadata:
+      labels:
+        app: service-registry
+    spec:
+      containers:
+      - name: service-registry
+        image: rajureddy98/service-registry:latest
+        ports:
+          - containerPort: 8761
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-registry-service
+  labels:
+    app: service-registry-service
+spec:
+  selector:
+    app: service-registry
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 8888
+    targetPort: 8761
+    nodePort: 30000
