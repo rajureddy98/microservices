@@ -13,4 +13,4 @@ logging:
 eureka:
   client:
     service-url:
-      defaultZone: http://43.205.143.93:8761/eureka/
+      defaultZone: http://10.102.205.193:8888/eureka/
